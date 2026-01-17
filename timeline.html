@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Timeline | SMK Negeri 1 Sukorejo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  #popup { background: rgba(0,0,0,0.8); }
+  /* Custom scrollbar untuk estetika */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: #ffcc00; border-radius: 10px; }
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+<header class="fixed top-0 left-0 right-0 bg-slate-900 text-white z-50">
+  <div class="flex items-center justify-between px-6 h-[80px]">
+    <div class="flex items-center gap-3">
+      <img src="./images/logo.jpg" class="w-12 h-12 rounded-full object-cover">
+      <h1 class="text-lg font-bold whitespace-nowrap">SMK Negeri 1 Sukorejo</h1>
+    </div>
+
+    <nav class="flex gap-8 text-sm font-medium">
+      <a href="index.html" class="hover:text-yellow-400">Dashboard</a>
+      <a href="artikel.html" class="hover:text-yellow-400">Artikel</a>
+      <a href="guru.html" class="hover:text-yellow-400">Guru</a>
+      <a href="galeri.html" class="hover:text-yellow-400">Galeri</a>
+      <a href="profil.html" class="hover:text-yellow-400">Profil</a>
+      <a href="timeline.html" class="text-yellow-400 border-b-2 border-yellow-400 pb-1">Timeline</a>
+    </nav>
+  </div>
+</header>
+
+<section class="mt-[80px] relative bg-[#0f172a] text-white py-12 px-6 overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-blue-600/30 rounded-full blur-[80px]"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-[80px]"></div>
+  </div>
+
+  <div class="max-w-4xl mx-auto relative z-10 text-center">
+    <div class="inline-block bg-[#ffcc00] text-[#0f172a] px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] mb-4 shadow-lg">
+      Timeline Program
+    </div>
+    <h2 class="text-3xl md:text-4xl font-black leading-tight mb-3">Rekam Jejak & Agenda Strategis</h2>
+    <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-6 font-light">
+      Informasi kegiatan akademik <span class="text-white font-medium underline decoration-[#ffcc00] decoration-2 underline-offset-4">SMKN 1 Sukorejo</span> periode 2022 – 2025.
+    </p>
+    <div class="pt-4 border-t border-gray-800">
+      <h3 class="text-[#ffcc00] text-xl font-black tracking-tighter uppercase italic opacity-90 mb-1">Sketsu Beraksi!</h3>
+      <p class="text-[9px] tracking-[0.3em] uppercase text-gray-500 font-bold">Berakhlak • Berkarya • Berprestasi</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto py-16 px-6">
+  
+  <div class="flex justify-end mb-10">
+    <div class="relative w-64 group">
+      <label class="block text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-2 ml-1">Filter Tahun</label>
+      <select id="filterTahun"
+  class="w-full max-w-xs bg-white border-2 border-[#ffcc00] text-slate-800
+         py-2 px-3 pr-8 rounded-lg text-sm font-semibold
+         shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400
+         transition-all cursor-pointer appearance-none">
+  <option value="2025" selected>Tahun 2025</option>
+  <option value="2024">Tahun 2024</option>
+  <option value="2023">Tahun 2023</option>
+  <option value="2022">Tahun 2022</option>
+</select>
+
+
+      <div class="absolute inset-y-0 right-4 top-7 flex items-center pointer-events-none text-[#ffcc00]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative">
+    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#ffcc00]"></div>
+
+    <!-- ==================== 2025 ==================== -->
+<div class="timeline-item mb-16 flex justify-end pr-8 relative w-1/2" data-tahun="2025">
+  <div class="bg-white shadow-md rounded-lg p-5 border-r-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">07 JAN 2025</p>
+    <h3 class="font-bold text-lg">Penerimaan Siswa Baru</h3>
+    <p class="text-gray-600 text-sm">Sosialisasi PPDB tahun ajaran baru.</p>
+  </div>
+  <span class="absolute top-6 -right-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-start pl-8 relative w-1/2 ml-auto" data-tahun="2025">
+  <div class="bg-white shadow-md rounded-lg p-5 border-l-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">25 MEI 2025</p>
+    <h3 class="font-bold text-lg">Gelar Karya P5</h3>
+    <p class="text-gray-600 text-sm">Pameran proyek profil pelajar pancasila.</p>
+  </div>
+  <span class="absolute top-6 -left-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-end pr-8 relative w-1/2" data-tahun="2025">
+  <div class="bg-white shadow-md rounded-lg p-5 border-r-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">18 FEB 2025</p>
+    <h3 class="font-bold text-lg">Workshop Kurikulum Merdeka</h3>
+    <p class="text-gray-600 text-sm">Peningkatan kompetensi guru.</p>
+  </div>
+  <span class="absolute top-6 -right-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-start pl-8 relative w-1/2 ml-auto" data-tahun="2025">
+  <div class="bg-white shadow-md rounded-lg p-5 border-l-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">10 JUL 2025</p>
+    <h3 class="font-bold text-lg">MPLS Siswa Baru</h3>
+    <p class="text-gray-600 text-sm">Pengenalan lingkungan sekolah.</p>
+  </div>
+  <span class="absolute top-6 -left-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-end pr-8 relative w-1/2" data-tahun="2025">
+  <div class="bg-white shadow-md rounded-lg p-5 border-r-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">30 NOV 2025</p>
+    <h3 class="font-bold text-lg">Job Fair & Bursa Kerja</h3>
+    <p class="text-gray-600 text-sm">Kerja sama industri & alumni.</p>
+  </div>
+  <span class="absolute top-6 -right-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<!-- ==================== 2024 ==================== -->
+<div class="timeline-item mb-16 flex justify-end pr-8 relative w-1/2" data-tahun="2024">
+  <div class="bg-white shadow-md rounded-lg p-5 border-r-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">12 FEB 2024</p>
+    <h3 class="font-bold text-lg">Isra Mi'raj</h3>
+    <p class="text-gray-600 text-sm">Penguatan karakter siswa.</p>
+  </div>
+  <span class="absolute top-6 -right-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-start pl-8 relative w-1/2 ml-auto" data-tahun="2024">
+  <div class="bg-white shadow-md rounded-lg p-5 border-l-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">10 MEI 2024</p>
+    <h3 class="font-bold text-lg">Uji Kompetensi Keahlian</h3>
+    <p class="text-gray-600 text-sm">Sertifikasi kompetensi siswa.</p>
+  </div>
+  <span class="absolute top-6 -left-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-end pr-8 relative w-1/2" data-tahun="2024">
+  <div class="bg-white shadow-md rounded-lg p-5 border-r-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">17 AGU 2024</p>
+    <h3 class="font-bold text-lg">HUT RI</h3>
+    <p class="text-gray-600 text-sm">Upacara & lomba kemerdekaan.</p>
+  </div>
+  <span class="absolute top-6 -right-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-start pl-8 relative w-1/2 ml-auto" data-tahun="2024">
+  <div class="bg-white shadow-md rounded-lg p-5 border-l-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">08 NOV 2024</p>
+    <h3 class="font-bold text-lg">Kunjungan Industri</h3>
+    <p class="text-gray-600 text-sm">Observasi dunia kerja.</p>
+  </div>
+  <span class="absolute top-6 -left-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<!-- ==================== 2023 ==================== -->
+<div class="timeline-item mb-16 flex justify-end pr-8 relative w-1/2" data-tahun="2023">
+  <div class="bg-white shadow-md rounded-lg p-5 border-r-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">20 FEB 2023</p>
+    <h3 class="font-bold text-lg">Try Out AKM</h3>
+    <p class="text-gray-600 text-sm">Persiapan ANBK.</p>
+  </div>
+  <span class="absolute top-6 -right-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-start pl-8 relative w-1/2 ml-auto" data-tahun="2023">
+  <div class="bg-white shadow-md rounded-lg p-5 border-l-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">12 AGU 2023</p>
+    <h3 class="font-bold text-lg">LKS Kabupaten</h3>
+    <p class="text-gray-600 text-sm">Kompetisi keahlian siswa.</p>
+  </div>
+  <span class="absolute top-6 -left-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-end pr-8 relative w-1/2" data-tahun="2023">
+  <div class="bg-white shadow-md rounded-lg p-5 border-r-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">05 OKT 2023</p>
+    <h3 class="font-bold text-lg">Pemberangkatan PKL</h3>
+    <p class="text-gray-600 text-sm">Siswa ke dunia industri.</p>
+  </div>
+  <span class="absolute top-6 -right-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<!-- ==================== 2022 ==================== -->
+<div class="timeline-item mb-16 flex justify-end pr-8 relative w-1/2" data-tahun="2022">
+  <div class="bg-white shadow-md rounded-lg p-5 border-r-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">10 JAN 2022</p>
+    <h3 class="font-bold text-lg">Upacara Awal Tahun</h3>
+    <p class="text-gray-600 text-sm">Pembukaan kegiatan akademik.</p>
+  </div>
+  <span class="absolute top-6 -right-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+<div class="timeline-item mb-16 flex justify-start pl-8 relative w-1/2 ml-auto" data-tahun="2022">
+  <div class="bg-white shadow-md rounded-lg p-5 border-l-4 border-[#ffcc00]">
+    <p class="text-xs text-[#ffcc00] font-bold">20 JUN 2022</p>
+    <h3 class="font-bold text-lg">Pelepasan Siswa</h3>
+    <p class="text-gray-600 text-sm">Wisuda angkatan 2022.</p>
+  </div>
+  <span class="absolute top-6 -left-3 w-6 h-6 bg-[#ffcc00] rounded-full border-4 border-[#0f172a]"></span>
+</div>
+
+
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white text-center py-4">
+© 2026 SMK Negeri 1 Sukorejo
+</footer>
+
+<script>
+  const filterTahun = document.getElementById('filterTahun');
+  const items = document.querySelectorAll('.timeline-item');
+
+  function tampilkanTahun(tahun) {
+    items.forEach(item => {
+      const itemYear = item.getAttribute('data-tahun');
+
+      if (itemYear === tahun) {
+        item.style.display = 'flex';
+        item.style.opacity = '0';
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transition = 'opacity 0.5s ease';
+        }, 10);
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // 🔥 DEFAULT: tampilkan tahun TERBARU (2025)
+  tampilkanTahun('2025');
+
+  // 🔄 Saat user pilih tahun lain
+  filterTahun.addEventListener('change', function () {
+    tampilkanTahun(this.value);
+  });
+</script>
+
+<script>
+function filterTahun(tahun) {
+  const items = document.querySelectorAll('.timeline-item');
+  const tahunKlik = parseInt(tahun);
+
+  items.forEach(item => {
+    const itemTahun = parseInt(item.dataset.tahun);
+
+    // tampilkan tahun yang diklik + tahun di bawahnya
+    if (itemTahun <= tahunKlik) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // scroll ke tahun yang diklik
+  const target = document.querySelector(
+    `.timeline-item[data-tahun="${tahun}"]`
+  );
+
+  if (target) {
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+</script>
+
+</body>
+</html>

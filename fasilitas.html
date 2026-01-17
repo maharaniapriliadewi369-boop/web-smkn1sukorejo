@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Fasilitas | SMK Negeri 1 Sukorejo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    
+<!-- HEADER -->
+<header class="bg-blue-900 text-white shadow">
+  <div class="flex items-center px-6 h-[80px]">
+    <img src="./images/logo.jpg" class="w-12 h-12 rounded-full mr-3">
+    <h1 class="font-bold text-lg">SMK Negeri 1 Sukorejo</h1>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<div class="max-w-6xl mx-auto px-6 py-10 flex-1">
+
+  <h2 class="text-3xl font-bold mb-4">Fasilitas Sekolah</h2>
+  <p class="text-gray-600 mb-8">
+    Fasilitas lengkap untuk menunjang pembelajaran dan pengembangan siswa.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+    <!-- LAB KOMPUTER -->
+    <div onclick="openModal(
+      'images/labkomputer.jpg',
+      'Lab Komputer',
+      'Lab komputer dilengkapi perangkat modern dan internet untuk pembelajaran RPL.'
+    )"
+    class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
+
+      <img src="images/labkomputer.jpg" class="h-32 w-full object-cover rounded mb-3">
+      <p class="font-semibold">Lab Komputer</p>
+    </div>
+
+    <!-- LAB ELEKTRONIKA -->
+    <div onclick="openModal(
+      'images/labelektronika.jpg',
+      'Lab Elektronika',
+      'Digunakan untuk praktik rangkaian elektronika dan otomasi industri.'
+    )"
+    class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
+
+      <img src="images/labelektronika.jpg" class="h-32 w-full object-cover rounded mb-3">
+      <p class="font-semibold">Lab Elektronika</p>
+    </div>
+
+    <!-- OTOMOTIF -->
+    <div onclick="openModal(
+      'images/otomotif.jpg',
+      'Workshop Otomotif',
+      'Tempat praktik perawatan dan perbaikan kendaraan bermotor.'
+    )"
+    class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
+
+      <img src="images/otomotif.jpg" class="h-32 w-full object-cover rounded mb-3">
+      <p class="font-semibold">Workshop Otomotif</p>
+    </div>
+
+    <!-- PERPUSTAKAAN -->
+    <div onclick="openModal(
+      'images/perpus.jpg',
+      'Perpustakaan',
+      'Menyediakan buku pelajaran, referensi, dan ruang baca yang nyaman.'
+    )"
+    class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
+
+      <img src="images/perpus.jpg" class="h-32 w-full object-cover rounded mb-3">
+      <p class="font-semibold">Perpustakaan</p>
+    </div>
+
+  </div>
+
+  <!-- TOMBOL KEMBALI -->
+  <div class="mt-10">
+    <a href="index.html"
+       class="inline-block bg-blue-700 hover:bg-blue-800
+              text-white px-5 py-2 rounded-lg">
+      ← Kembali ke Beranda
+    </a>
+  </div>
+
+</div>
+
+<!-- MODAL POPUP -->
+<div id="modalFasilitas"
+  class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+
+  <div class="bg-white rounded-xl max-w-xl w-full mx-4 overflow-hidden">
+
+    <img id="modalImg" src="" class="w-full h-64 object-cover">
+
+    <div class="p-4 text-center">
+      <h3 id="modalTitle" class="text-xl font-bold mb-2"></h3>
+      <p id="modalDesc" class="text-gray-600 text-sm"></p>
+
+      <button onclick="closeModal()"
+        class="mt-4 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded">
+        Tutup
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-blue-900 text-white text-center py-3 text-sm">
+© 2026 SMK Negeri 1 Sukorejo
+</footer>
+
+<!-- SCRIPT -->
+<script>
+function openModal(img, title, desc) {
+  document.getElementById("modalImg").src = img;
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalDesc").innerText = desc;
+  document.getElementById("modalFasilitas").classList.remove("hidden");
+  document.getElementById("modalFasilitas").classList.add("flex");
+}
+
+function closeModal() {
+  document.getElementById("modalFasilitas").classList.add("hidden");
+}
+</script>
+
+</body>
+</html>
+fasilitas

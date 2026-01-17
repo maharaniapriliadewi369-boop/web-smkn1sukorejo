@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri | SMK Negeri 1 Sukorejo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 bg-slate-900 text-white z-50">
+  <div class="flex items-center justify-between px-6 h-[80px]">
+
+    <div class="flex items-center gap-3">
+      <img src="./images/logo.jpg" class="w-12 h-12 rounded-full object-cover">
+      <h1 class="text-lg font-bold">SMK Negeri 1 Sukorejo</h1>
+    </div>
+
+    <nav class="hidden md:flex gap-8 text-sm font-medium">
+      <a href="index.html" class="hover:text-yellow-400">Dashboard</a>
+      <a href="artikel.html" class="hover:text-yellow-400">Artikel</a>
+      <a href="guru.html" class="hover:text-yellow-400">Guru</a>
+      <a href="galeri.html" class="text-yellow-400 border-b-2 border-yellow-400 pb-1">Galeri</a>
+      <a href="profil.html" class="hover:text-yellow-400">Profil</a>
+      <a href="timeline.html"class="hover:text-yellow-400">Timeline</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="mt-[100px] px-6 md:px-10 pb-16">
+
+  <h2 class="text-2xl md:text-3xl font-bold mb-6">Galeri Kegiatan Sekolah</h2>
+
+  <!-- FILTER -->
+  <div class="flex flex-wrap gap-4 mb-10 items-center">
+    <select id="kelasFilter"
+      class="border rounded-lg px-4 py-2 focus:ring focus:ring-yellow-300">
+      <option value="all">Semua Kelas</option>
+      <option value="X">Kelas X</option>
+      <option value="XI">Kelas XI</option>
+      <option value="XII">Kelas XII</option>
+    </select>
+
+    <div class="flex items-center border rounded-lg overflow-hidden bg-white">
+      <input id="searchInput" type="text" placeholder="Cari kegiatan..."
+        class="px-4 py-2 outline-none w-48 md:w-64">
+      <span class="bg-yellow-400 px-4 py-2">🔍</span>
+    </div>
+  </div>
+
+  <!-- GALERI GRID -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+    <!-- ITEM -->
+
+  <div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Kunjungan Industri"
+     data-kelas="XII">
+
+  <img src="./images/kunjungan.jpg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Kunjungan Industri</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="praktikum kimia industri"
+     data-kelas="XII">
+
+
+  <img src="./images/kimia.jpg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Praktikum Kimia Industri</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Masa Pengenalan Siswa Baru"
+     data-kelas="X">
+
+
+  <img src="./images/kegiatan.jpg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Masa Pengenalan Siswa Baru<h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Program Adiwiyata"
+     data-kelas="X">
+
+
+  <img src="./images/kegiatan1.jpg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Program Adiwiyata</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Paskibraka"
+     data-kelas="XI">
+
+
+  <img src="./images/paskib.jpg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Paskibraka</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Proses Belajar Mengajar"
+     data-kelas="X">
+
+
+  <img src="./images/siswa_dikelas.jpeg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Proses Belajar Mengajar</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="SUASANA"
+     data-kelas="XII">
+
+
+  <img src="./images/suasana_smk.jpg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">SUASANA</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Upacara Bendera"
+     data-kelas="XII">
+
+
+  <img src="./images/upacara_smk.jpg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Upacara Bendera</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="JUARA 1 Lomba padus"
+     data-kelas="XI">
+
+
+  <img src="./images/lomba.jpeg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">JUARA 1 lomba padus</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Study tour"
+     data-kelas="XI">
+
+
+  <img src="./images/santera.jpeg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Study tour</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Hari Guru"
+     data-kelas="XI">
+
+
+  <img src="./images/hari_guru.jpeg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Hari Guru</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+<div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl group"
+     data-title="Pramuka RPL"
+     data-kelas="XI">
+
+  <img src="./images/RPL..jpeg"
+    class="w-full h-52 object-cover"
+    onclick="openModal(this.src)">
+
+  <div class="overlay">
+    <div class="text">
+      <h3 class="text-lg font-semibold">Pramuka RPL</h3>
+      <p class="text-sm opacity-90">SMKN 1 Sukorejo</p>
+    </div>
+  </div>
+
+</div>
+
+  <!-- LOAD MORE BUTTON -->
+  <div class="col-span-full flex justify-center mt-12">
+  <button id="loadMoreBtn"
+    class="bg-yellow-400 px-8 py-3 rounded-xl font-semibold">
+    Lihat Lebih Banyak ▼
+  </button>
+</div>
+
+
+
+</main>
+
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white text-center py-4">
+  © 2026 SMK Negeri 1 Sukorejo
+</footer>
+
+<!-- MODAL -->
+
+<div id="imageModal"
+  class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+
+  <!-- CONTAINER UTAMA -->
+  <div class="relative mx-6 flex justify-center">
+
+    <!-- WRAPPER FOTO + PANEL -->
+    <div class="relative inline-block">
+
+      <!-- TOMBOL TUTUP -->
+      <button onclick="closeModal()"
+        class="absolute top-3 right-3 z-10
+               bg-black/60 text-white w-10 h-10 rounded-full
+               flex items-center justify-center text-xl
+               hover:bg-black transition">
+        ✕
+      </button>
+
+      <!-- FOTO -->
+      <img id="modalImage"
+        class="max-h-[80vh] max-w-[90vw] object-contain rounded-t-xl mx-auto">
+
+      <!-- PANEL PUTIH (PASTI PAS DENGAN FOTO) -->
+      <div class="bg-white rounded-b-xl px-6 py-4">
+        <p class="text-gray-800 font-semibold text-sm">
+          SMK Negeri 1 Sukorejo
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- STYLE OVERLAY -->
+<style>
+  /* KOTAK */
+  .gallery-item{
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+
+  .gallery-item:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 25px 40px rgba(0,0,0,.25);
+  }
+
+  /* OVERLAY */
+  .overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+      to top,
+      rgba(0,0,0,.8),
+      rgba(0,0,0,.35),
+      transparent
+    );
+
+    display:flex;
+    align-items:flex-end;
+    padding:1.25rem;
+
+    opacity:0;
+    transition:opacity .35s ease;
+
+    
+    pointer-events: none;
+  }
+
+  .gallery-item:hover .overlay{
+    opacity:1;
+  }
+
+  /* TEKS */
+  .overlay .text{
+    transform: translateY(30px);
+    transition: transform .35s ease;
+    color:#fff;
+  }
+
+  .gallery-item:hover .overlay .text{
+    transform: translateY(0);
+  }
+
+  
+</style>
+
+
+<!-- SCRIPT -->
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const kelasFilter = document.getElementById("kelasFilter");
+  const searchInput = document.getElementById("searchInput");
+  const items = document.querySelectorAll(".gallery-item");
+
+  function openModal(src){
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    modalImg.src = src;
+  }
+
+  function closeModal(){
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+
+  modal.addEventListener("click", e => {
+    if(e.target === modal) closeModal();
+  });
+
+  function filterGallery(){
+    const kelas = kelasFilter.value.toLowerCase();
+    const keyword = searchInput.value.toLowerCase();
+
+    items.forEach(item => {
+      const itemKelas = item.dataset.kelas.toLowerCase();
+      const title = item.dataset.title.toLowerCase();
+
+      const show =
+        (kelas === "all" || itemKelas === kelas) &&
+        title.includes(keyword);
+
+      item.style.display = show ? "block" : "none";
+    });
+  }
+
+  kelasFilter.addEventListener("change", filterGallery);
+  searchInput.addEventListener("keyup", filterGallery);
+</script>
+<script>
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  let visibleCount = 8;
+  let expanded = false;
+
+  function updateGalleryLimit() {
+    items.forEach((item, index) => {
+      item.style.display = index < visibleCount ? "block" : "none";
+    });
+  }
+
+  loadMoreBtn.addEventListener("click", () => {
+    expanded = !expanded;
+
+    if (expanded) {
+      visibleCount = items.length;
+      loadMoreBtn.innerHTML = "Lebih sedikit ▲";
+    } else {
+      visibleCount = 8;
+      loadMoreBtn.innerHTML = "Lihat lebih banyak ▼";
+      window.scrollTo({ top: 300, behavior: "smooth" });
+    }
+
+    updateGalleryLimit();
+  });
+
+  updateGalleryLimit();
+</script>
+
+</body>
+</html>
