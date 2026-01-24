@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Dashboard | SMK Negeri 1 Sukorejo</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Dashboard | SMK Negeri 1 Sukorejo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-100">
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header class="fixed top-0 left-0 right-0 bg-slate-900 text-white z-50">
   <div class="flex items-center justify-between px-6 h-[80px]">
-
     <div class="flex items-center gap-3">
       <img src="./images/logo.jpg" class="w-12 h-12 rounded-full object-cover">
       <h1 class="text-lg font-bold">SMK Negeri 1 Sukorejo</h1>
     </div>
 
-
-    <!-- MENU NAV -->
-    <nav class="flex gap-8 text-sm font-medium">
+    <nav class="hidden md:flex gap-8 text-sm font-medium">
       <a href="index.html" class="text-yellow-400 border-b-2 border-yellow-400 pb-1">Dashboard</a>
       <a href="profil.html" class="hover:text-yellow-400">Profil</a>
       <a href="guru.html" class="hover:text-yellow-400">Guru</a>
@@ -31,407 +28,148 @@
   </div>
 </header>
 
+<!-- ================= HERO ================= -->
+<div class="relative w-full h-[400px] mt-[80px] overflow-hidden">
+  <img class="slide absolute inset-0 w-full h-full object-cover" src="images/gedung_smk.jpg">
+  <img class="slide absolute inset-0 w-full h-full object-cover opacity-0" src="images/upacara_smk.jpg">
+  <img class="slide absolute inset-0 w-full h-full object-cover opacity-0" src="images/guru_guru.jpg">
 
-    <!-- Tombol Mobile -->
-    <button class="md:hidden" onclick="toggleMenu()">
-      <svg class="w-7 h-7" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden bg-slate-800 md:hidden">
-    <a href="dashboard.html" class="block px-6 py-3 border-b border-slate-700">Dashboard</a>
-    <a href="artikel.html" class="block px-6 py-3 border-b border-slate-700">Artikel</a>
-    <a href="guru.html" class="block px-6 py-3 border-b border-slate-700">Guru</a>
-    <a href="galeri.html" class="block px-6 py-3 border-b border-slate-700">Galeri</a>
-    <a href="profil.html" class="block px-6 py-3">Profil</a>
-  </div>
-</header>
-
-  </div>
-</header>
-
-  </div>
-</header>
-
-<!-- HERO -->
-<!-- HERO SLIDER -->
-<div class="relative w-full h-[400px] overflow-hidden mt-[80px]">
-
-
-  <img class="slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700"
-       src="./images/gedung_smk.jpg">
-
-  <img class="slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
-       src="./images/upacara_smk.jpg">
-
-  <img class="slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
-       src="./images/guru_guru.jpg">
-
-  <!-- Overlay -->
   <div class="absolute inset-0 bg-black/50"></div>
+
+  <button onclick="prevHero()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 text-white px-4 py-2 rounded-full">❮</button>
+  <button onclick="nextHero()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 text-white px-4 py-2 rounded-full">❯</button>
 </div>
 
-<!-- KONTEN -->
-<div class="grid grid-cols-12 gap-4 px-6 py-8">
+<!-- ================= KONTEN ================= -->
+<div class="grid grid-cols-12 gap-6 px-6 py-8">
 
   <!-- PENGUMUMAN -->
   <div class="col-span-12 lg:col-span-6">
-    <div class="bg-white rounded-xl shadow h-full">
-      <div class="bg-black-700 text-white px-4 py-3 rounded-t-xl">
+    <div class="bg-white rounded-xl shadow">
+      <div class="bg-blue-700 text-white px-4 py-3 rounded-t-xl">
         <h3 class="font-semibold">📢 Pengumuman</h3>
       </div>
       <ul id="pengumumanList" class="divide-y text-sm"></ul>
-      <div id="pagination" class="flex justify-center gap-1 py-3 bg-gray-50"></div>
+      <div id="pagination" class="flex justify-center gap-2 py-3"></div>
     </div>
-    <!-- Button -->
-  <button onclick="prevSlide()"
-    class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded z-10">❮</button>
-
-  <button onclick="nextSlide()"
-    class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded z-10">❯</button>
-
   </div>
 
   <!-- AGENDA -->
   <div class="col-span-12 lg:col-span-6">
-    <div class="bg-white rounded-xl shadow h-full">
-      <div class="bg-black-600 text-white px-4 py-3 rounded-t-xl">
+    <div class="bg-white rounded-xl shadow">
+      <div class="bg-green-700 text-white px-4 py-3 rounded-t-xl">
         <h3 class="font-semibold">📅 Agenda</h3>
       </div>
       <ul class="divide-y text-sm">
-        <li class="p-4">
-          <p class="font-semibold">Rapat Orang Tua</p>
-          <p class="text-xs text-gray-500">12 Juni 2026</p>
-        </li>
-        <li class="p-4">
-          <p class="font-semibold">Class Meeting</p>
-          <p class="text-xs text-gray-500">18 Juni 2026</p>
-        </li>
-        <li class="p-4">
-          <p class="font-semibold">Pembagian Raport</p>
-          <p class="text-xs text-gray-500">25 Juni 2026</p>
-        </li>
+        <li class="p-4">Rapat Orang Tua – <span class="text-xs text-gray-500">12 Juni 2026</span></li>
+        <li class="p-4">Class Meeting – <span class="text-xs text-gray-500">18 Juni 2026</span></li>
+        <li class="p-4">Pembagian Raport – <span class="text-xs text-gray-500">25 Juni 2026</span></li>
       </ul>
     </div>
   </div>
 
-  
-  <!-- JURUSAN -->
-<div class="col-span-12">
-  <div class="bg-white rounded-xl shadow mt-2">
-    <div class="text-center px-6 py-6">
-      <h2 class="text-2xl font-bold">Jurusan</h2>
-      <hr class="my-3">
-      <p class="text-sm text-gray-600">
-        Program Keahlian Unggulan di SMK Negeri 1 Sukorejo
-      </p>
-    </div>
+  <!-- ================= FASILITAS ================= -->
+  <div class="col-span-12">
+    <div class="bg-white rounded-xl shadow grid md:grid-cols-2 overflow-hidden">
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 pb-6">
+      <div class="relative h-72">
+        <img id="fasilitasImg" src="images/fasilitas1.jpg" class="absolute inset-0 w-full h-full object-cover">
 
-      <!-- RPL -->
-     
-<div onclick="openJurusan('RPL','Rekayasa Perangkat Lunak','Jurusan yang mempelajari pembuatan website, aplikasi, dan software modern. Lulusannya bisa jadi programmer, web developer, dan IT support.','images/rpl1.jpg')"
-  class="relative h-64 rounded-xl overflow-hidden cursor-pointer group shadow block">
-
-  <img src="images/Rpl.jpg"
-    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition">
-
-  <div class="absolute inset-0 bg-black/50"></div>
-
-  <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-    <h3 class="text-3xl font-bold">RPL</h3>
-    <p>Rekayasa Perangkat Lunak</p>
-  </div>
-</div>
-
-      <!-- TEI -->
-<div onclick="openJurusan('TEI','Teknik Elektronika Industri',
-'Jurusan yang mempelajari rangkaian listrik, sistem kontrol, dan otomasi industri. Cocok untuk bekerja di pabrik, perusahaan elektronik, dan teknisi industri.',
-'images/tei3.jpg')"
-class="relative h-64 rounded-xl overflow-hidden cursor-pointer group shadow">
-
-<img src="images/Tei.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition">
-<div class="absolute inset-0 bg-black/50"></div>
-<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-<h3 class="text-3xl font-bold">TEI</h3>
-<p>Teknik Elektronika Industri</p>
-</div>
-</div>
-
-      
-      <!-- TKI -->
-<div onclick="openJurusan('TKI','Teknik Kimia Industri',
-'Jurusan yang mempelajari proses produksi kimia, pengolahan bahan, dan pengujian kualitas produk di industri pabrik.',
-'images/tki4.jpg')"
-class="relative h-64 rounded-xl overflow-hidden cursor-pointer group shadow">
-
-<img src="images/Tki.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition">
-<div class="absolute inset-0 bg-black/50"></div>
-<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-<h3 class="text-3xl font-bold">TKI</h3>
-<p>Teknik Kimia Industri</p>
-</div>
-</div>
-
-      <!-- TKR -->
-<div onclick="openJurusan('TKR','Teknik Kendaraan Ringan',
-'Jurusan yang mempelajari mesin mobil, sistem kelistrikan, dan perawatan kendaraan. Cocok untuk bekerja di bengkel dan industri otomotif.',
-'images/tkr5.jpg')"
-class="relative h-64 rounded-xl overflow-hidden cursor-pointer group shadow">
-
-<img src="images/Tkr.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition">
-<div class="absolute inset-0 bg-black/50"></div>
-<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-<h3 class="text-3xl font-bold">TKR</h3>
-<p>Teknik Kendaraan Ringan</p>
-</div>
-</div>
-     <!-- TAV -->
-<div onclick="openJurusan('TAV','Teknik Audio Video',
-'Jurusan yang mempelajari sistem audio, video, kamera, televisi, dan perangkat multimedia profesional.',
-'images/tav2.jpg')"
-class="relative h-64 rounded-xl overflow-hidden cursor-pointer group shadow md:col-span-2">
-
-<img src="images/Tav.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition">
-<div class="absolute inset-0 bg-black/50"></div>
-<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-<h3 class="text-3xl font-bold">TAV</h3>
-<p>Teknik Audio Video</p>
-</div>
-</div>
-
-    </div>
-  </div>
-  <!-- MODAL -->
-<div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
-  <div class="bg-white rounded-xl max-w-4xl w-full mx-4 overflow-hidden relative flex">
-
-    <!-- Gambar -->
-    <div class="w-1/2">
-      <img id="modalImg" class="w-full h-full object-cover">
-    </div>
-
-    <!-- Teks -->
-    <div class="w-1/2 p-6">
-      <h2 id="modalTitle" class="text-3xl font-bold mb-2"></h2>
-      <p id="modalSub" class="text-gray-600 mb-4"></p>
-      <p id="modalDesc" class="text-gray-700"></p>
-
-      <button onclick="closeModal()"
-        class="mt-6 bg-red-500 text-white px-4 py-2 rounded">
-        Tutup
-      </button>
-    </div>
-
-    <!-- Close X -->
-    <button onclick="closeModal()" class="absolute top-2 right-4 text-3xl">&times;</button>
-  </div>
-</div>
-
-</div>
-
-</a>
-
-</div>
-
+        <button onclick="prevFasilitas()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded">❮</button>
+        <button onclick="nextFasilitas()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded">❯</button>
       </div>
 
-      <div id="jurusanDetail" class="hidden border-t p-6 bg-gray-50 text-center">
-        <h4 id="jurusanTitle" class="text-xl font-bold mb-2"></h4>
-        <p id="jurusanDesc" class="text-gray-600 max-w-2xl mx-auto"></p>
+      <div class="p-8">
+        <h2 class="text-2xl font-bold mb-4">Fasilitas Sekolah</h2>
+        <p class="text-gray-600 mb-4">
+          SMK Negeri 1 Sukorejo memiliki fasilitas lengkap untuk menunjang pembelajaran.
+        </p>
+
+        <ul class="list-disc ml-5 text-sm text-gray-700 mb-6">
+          <li>Lab Komputer</li>
+          <li>Lab Elektronika</li>
+          <li>Workshop Otomotif</li>
+          <li>Studio Audio Video</li>
+        </ul>
+
+        <!-- PINDAH HALAMAN -->
+        <a href="fasilitas.html"
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+          Selengkapnya
+        </a>
       </div>
-    </div>
-  </div>
-<!-- FASILITAS (CLICK TO OPEN) -->
-
-    </div>
-
-   <!-- FASILITAS -->
-<div class="col-span-12">
-  <div class="bg-white rounded-xl shadow mt-2 overflow-hidden">
-
-    <div class="grid grid-cols-1 md:grid-cols-2">
-
-      <!-- FOTO / SLIDER -->
-      <div class="relative h-72 md:h-full">
-        <img id="fasilitasImg"
-          src="images/fasilitas.jpg"
-          class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700">
-
-        <!-- PANAH -->
-        <button onclick="prevFasilitas()"
-          class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full">❮</button>
-
-        <button onclick="nextFasilitas()"
-          class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full">❯</button>
-      </div>
-
-      
-      <!-- DESKRIPSI -->
-<div class="relative p-8 flex flex-col justify-center z-10 bg-white">
-  <h2 class="text-3xl font-bold mb-4">Fasilitas</h2>
-  <hr class="mb-4">
-
-  <p class="text-gray-600 mb-6">
-    Fasilitas yang baik dapat menunjang proses pembelajaran dan
-    peningkatan karakter warga sekolah.
-  </p>
-
-  <a href="fasilitas.html"
-   class="inline-block bg-yellow-400 hover:bg-yellow-500
-          text-black font-semibold px-6 py-3 rounded-lg">
-  Selengkapnya →
-</a>
-
-</div>
-
-
-    </div>
-
-    <!-- DETAIL FASILITAS -->
-    <div id="fasilitasDetail" class="hidden border-t px-8 py-6 bg-gray-50">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-
-        <div class="bg-white p-4 rounded shadow text-center font-semibold">Lab Komputer</div>
-        <div class="bg-white p-4 rounded shadow text-center font-semibold">Lab Elektronika</div>
-        <div class="bg-white p-4 rounded shadow text-center font-semibold">Workshop Otomotif</div>
-        <div class="bg-white p-4 rounded shadow text-center font-semibold">Lab Kimia</div>
-        <div class="bg-white p-4 rounded shadow text-center font-semibold">Studio Audio Video</div>
-        <div class="bg-white p-4 rounded shadow text-center font-semibold">Perpustakaan</div>
-        <div class="bg-white p-4 rounded shadow text-center font-semibold">Lapangan Olahraga</div>
-        <div class="bg-white p-4 rounded shadow text-center font-semibold">Ruang Multimedia</div>
-
-      </div>
-    </div>
-
-<!--slider-->
-
-<script>
-function openJurusan(title, sub, desc, img){
-  document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalSub").innerText = sub;
-  document.getElementById("modalDesc").innerText = desc;
-  document.getElementById("modalImg").src = img;
-  document.getElementById("modal").classList.remove("hidden");
-  document.getElementById("modal").classList.add("flex");
-}
-
-function closeModal(){
-  document.getElementById("modal").classList.add("hidden");
-  document.getElementById("modal").classList.remove("flex");
-}
-</script>
-
-      </div>
-    </div>
-
-  </div>
-</div>
 
     </div>
   </div>
 </div>
 
-</div>
-
-<!-- FOOTER -->
 <footer class="bg-blue-900 text-white text-center py-3 text-sm">
-© 2026 SMK Negeri 1 Sukorejo
+  © 2026 SMK Negeri 1 Sukorejo
 </footer>
 
-<!-- SCRIPT -->
 <script>
+/* HERO */
+let heroIndex = 0;
+const slides = document.querySelectorAll(".slide");
 
-/* SLIDER */
-let slideIndex=0;
-const slides=document.querySelectorAll(".slide");
-setInterval(()=>{
-  slides.forEach((s,i)=>s.style.opacity=i===slideIndex?"1":"0");
-  slideIndex=(slideIndex+1)%slides.length;
-},5000);
+function showHero(i) {
+  slides.forEach((s, idx) => s.style.opacity = idx === i ? "1" : "0");
+}
+function nextHero() {
+  heroIndex = (heroIndex + 1) % slides.length;
+  showHero(heroIndex);
+}
+function prevHero() {
+  heroIndex = (heroIndex - 1 + slides.length) % slides.length;
+  showHero(heroIndex);
+}
+setInterval(nextHero, 5000);
+showHero(heroIndex);
 
 /* PENGUMUMAN */
-const pengumumanData=[
-"Ujian Tengah Semester Genap (12–18 Juni 2026)",
-"PPDB Tahun Ajaran 2026/2027 Dibuka",
-"Libur Nasional & Cuti Bersama",
-"Pengambilan Ijazah Alumni",
-"Gladi Bersih Kelulusan Kelas XII",
-"Pembagian Raport Semester Genap"
+const pengumumanData = [
+  "Ujian Tengah Semester Genap",
+  "PPDB 2026/2027 Dibuka",
+  "Libur Nasional",
+  "Pengambilan Ijazah Alumni",
+  "Gladi Bersih Kelulusan",
+  "Pembagian Raport"
 ];
-let currentPage=1;
-const perPage=4;
+let currentPage = 1;
+const perPage = 4;
 
-function renderPengumuman(){
-  const list=document.getElementById("pengumumanList");
-  list.innerHTML="";
-  pengumumanData.slice((currentPage-1)*perPage,currentPage*perPage)
-  .forEach(i=>list.innerHTML+=`<li class="p-4 hover:bg-blue-50">${i}</li>`);
+function renderPengumuman() {
+  const list = document.getElementById("pengumumanList");
+  list.innerHTML = "";
+  pengumumanData.slice((currentPage-1)*perPage, currentPage*perPage)
+    .forEach(p => list.innerHTML += `<li class="p-4">${p}</li>`);
   renderPagination();
 }
-function renderPagination(){
-  const pag=document.getElementById("pagination");
-  pag.innerHTML="";
-  for(let i=1;i<=Math.ceil(pengumumanData.length/perPage);i++){
-    pag.innerHTML+=`<button onclick="goPage(${i})" class="px-2 py-1 text-xs rounded ${i===currentPage?'bg-blue-600 text-white':'border'}">${i}</button>`;
+function renderPagination() {
+  const pag = document.getElementById("pagination");
+  pag.innerHTML = "";
+  const total = Math.ceil(pengumumanData.length / perPage);
+  for(let i=1;i<=total;i++){
+    pag.innerHTML += `<button onclick="goPage(${i})"
+      class="px-2 py-1 text-xs ${i===currentPage?'bg-blue-600 text-white':'border'} rounded">${i}</button>`;
   }
 }
-function goPage(p){currentPage=p;renderPengumuman();}
+function goPage(p){ currentPage=p; renderPengumuman(); }
 renderPengumuman();
 
-/* JURUSAN */
-function showJurusan(j){
-  const data={
-    rpl:["Rekayasa Perangkat Lunak","Pemrograman, web, mobile, database"],
-    tei:["Teknik Elektronika Industri","PLC, sensor, otomasi industri"],
-    tki:["Teknik Komputer & Informatika","Jaringan, server, IT"],
-    tkr:["Teknik Kendaraan Ringan","Perawatan & perbaikan mobil"],
-    tav:["Teknik Audio Video","Audio, video & multimedia"]
-  };
-  document.getElementById("jurusanTitle").innerText=data[j][0];
-  document.getElementById("jurusanDesc").innerText=data[j][1];
-  document.getElementById("jurusanDetail").classList.remove("hidden");
+/* FASILITAS SLIDER */
+const fasilitas = ["images/fasilitas1.jpg","images/lomba.jpeg","images/fasilitas3.jpg"];
+let fasilitasIndex = 0;
+const fasilitasImg = document.getElementById("fasilitasImg");
+
+function nextFasilitas(){
+  fasilitasIndex = (fasilitasIndex+1)%fasilitas.length;
+  fasilitasImg.src = fasilitas[fasilitasIndex];
 }
-</script>
-<script>
-/* SWIPE / DRAG SLIDER (INFO SEKOLAH) */
-let startX = 0;
-let isDragging = false;
-
-infoSlider.addEventListener("mousedown", e => {
-  isDragging = true;
-  startX = e.pageX;
-});
-
-infoSlider.addEventListener("mouseup", e => {
-  if(!isDragging) return;
-  let diff = e.pageX - startX;
-  if(diff > 50) prevInfo();
-  if(diff < -50) nextInfo();
-  isDragging = false;
-});
-
-infoSlider.addEventListener("mouseleave", () => {
-  isDragging = false;
-});
-
-/* TOUCH (HP) */
-infoSlider.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-});
-
-infoSlider.addEventListener("touchend", e => {
-  let endX = e.changedTouches[0].clientX;
-  let diff = endX - startX;
-  if(diff > 50) prevInfo();
-  if(diff < -50) nextInfo();
-});
-
+function prevFasilitas(){
+  fasilitasIndex = (fasilitasIndex-1+fasilitas.length)%fasilitas.length;
+  fasilitasImg.src = fasilitas[fasilitasIndex];
+}
 </script>
 
 </body>

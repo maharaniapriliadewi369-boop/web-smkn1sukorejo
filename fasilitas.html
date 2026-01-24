@@ -7,16 +7,16 @@
 </head>
 
 <body class="bg-gray-100 min-h-screen flex flex-col">
-    
-<!-- HEADER -->
+
+<!-- ================= HEADER ================= -->
 <header class="bg-blue-900 text-white shadow">
   <div class="flex items-center px-6 h-[80px]">
-    <img src="./images/logo.jpg" class="w-12 h-12 rounded-full mr-3">
+    <img src="images/logo.jpg" class="w-12 h-12 rounded-full mr-3">
     <h1 class="font-bold text-lg">SMK Negeri 1 Sukorejo</h1>
   </div>
 </header>
 
-<!-- CONTENT -->
+<!-- ================= CONTENT ================= -->
 <div class="max-w-6xl mx-auto px-6 py-10 flex-1">
 
   <h2 class="text-3xl font-bold mb-4">Fasilitas Sekolah</h2>
@@ -27,50 +27,38 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
 
     <!-- LAB KOMPUTER -->
-    <div onclick="openModal(
-      'images/labkomputer.jpg',
-      'Lab Komputer',
-      'Lab komputer dilengkapi perangkat modern dan internet untuk pembelajaran RPL.'
-    )"
-    class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
+    <div onclick="openModal('images/Rpl.jpg','Lab Komputer','Lab komputer dilengkapi perangkat modern dan internet.')"
+      class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
 
-      <img src="images/labkomputer.jpg" class="h-32 w-full object-cover rounded mb-3">
+      <img src="images/Rpl.jpg"
+           class="h-32 w-full object-cover rounded mb-3">
       <p class="font-semibold">Lab Komputer</p>
     </div>
 
     <!-- LAB ELEKTRONIKA -->
-    <div onclick="openModal(
-      'images/labelektronika.jpg',
-      'Lab Elektronika',
-      'Digunakan untuk praktik rangkaian elektronika dan otomasi industri.'
-    )"
-    class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
+    <div onclick="openModal('images/Tei.jpg','Lab Elektronika','Digunakan untuk praktik rangkaian elektronika.')"
+      class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
 
-      <img src="images/labelektronika.jpg" class="h-32 w-full object-cover rounded mb-3">
+      <img src="images/Tei.jpg"
+           class="h-32 w-full object-cover rounded mb-3">
       <p class="font-semibold">Lab Elektronika</p>
     </div>
 
     <!-- OTOMOTIF -->
-    <div onclick="openModal(
-      'images/otomotif.jpg',
-      'Workshop Otomotif',
-      'Tempat praktik perawatan dan perbaikan kendaraan bermotor.'
-    )"
-    class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
+    <div onclick="openModal('images/Tkr.jpg','Workshop Otomotif','Tempat praktik perawatan kendaraan bermotor.')"
+      class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
 
-      <img src="images/otomotif.jpg" class="h-32 w-full object-cover rounded mb-3">
+      <img src="images/Tkr.jpg"
+           class="h-32 w-full object-cover rounded mb-3">
       <p class="font-semibold">Workshop Otomotif</p>
     </div>
 
     <!-- PERPUSTAKAAN -->
-    <div onclick="openModal(
-      'images/perpus.jpg',
-      'Perpustakaan',
-      'Menyediakan buku pelajaran, referensi, dan ruang baca yang nyaman.'
-    )"
-    class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
+    <div onclick="openModal('images/perpus.jpg','Perpustakaan','Menyediakan buku pelajaran dan ruang baca.')"
+      class="bg-white rounded-xl shadow p-4 text-center cursor-pointer hover:scale-105 transition">
 
-      <img src="images/perpus.jpg" class="h-32 w-full object-cover rounded mb-3">
+      <img src="images/perpus.jpg"
+           class="h-32 w-full object-cover rounded mb-3">
       <p class="font-semibold">Perpustakaan</p>
     </div>
 
@@ -79,28 +67,29 @@
   <!-- TOMBOL KEMBALI -->
   <div class="mt-10">
     <a href="index.html"
-       class="inline-block bg-blue-700 hover:bg-blue-800
-              text-white px-5 py-2 rounded-lg">
+       class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 rounded-lg">
       ← Kembali ke Beranda
     </a>
   </div>
 
 </div>
 
-<!-- MODAL POPUP -->
+<!-- ================= MODAL ================= -->
 <div id="modalFasilitas"
   class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
 
   <div class="bg-white rounded-xl max-w-xl w-full mx-4 overflow-hidden">
 
-    <img id="modalImg" src="" class="w-full h-64 object-cover">
+    <img id="modalImg"
+         class="w-full h-64 object-cover bg-gray-200"
+         alt="Gambar Fasilitas">
 
-    <div class="p-4 text-center">
+    <div class="p-5 text-center">
       <h3 id="modalTitle" class="text-xl font-bold mb-2"></h3>
       <p id="modalDesc" class="text-gray-600 text-sm"></p>
 
       <button onclick="closeModal()"
-        class="mt-4 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded">
+        class="mt-5 bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 rounded-lg">
         Tutup
       </button>
     </div>
@@ -108,26 +97,31 @@
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="bg-blue-900 text-white text-center py-3 text-sm">
 © 2026 SMK Negeri 1 Sukorejo
 </footer>
 
-<!-- SCRIPT -->
+<!-- ================= SCRIPT ================= -->
 <script>
 function openModal(img, title, desc) {
-  document.getElementById("modalImg").src = img;
+  const modal = document.getElementById("modalFasilitas");
+  const modalImg = document.getElementById("modalImg");
+
+  modalImg.src = img;
   document.getElementById("modalTitle").innerText = title;
   document.getElementById("modalDesc").innerText = desc;
-  document.getElementById("modalFasilitas").classList.remove("hidden");
-  document.getElementById("modalFasilitas").classList.add("flex");
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
 }
 
 function closeModal() {
-  document.getElementById("modalFasilitas").classList.add("hidden");
+  const modal = document.getElementById("modalFasilitas");
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
 }
 </script>
 
 </body>
 </html>
-fasilitas
